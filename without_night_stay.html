@@ -4,34 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Without Night Stay</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+            font-size: 28px;
+        }
+        .options {
+            margin-top: 30px;
+        }
+        button {
+            background-color: white;
+            color: #ff5e62;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #ffe0e0;
+        }
+        #messageBox {
+            display: none;
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: 20px auto;
+            font-size: 18px;
+        }
+        #chooseAnother {
+            margin-top: 10px;
+            background-color: #ff5e62;
+            color: white;
+        }
+    </style>
 </head>
 <body>
+
     <h1>I'm really glad that a QT💅 like you has made it till here, please select your destination.</h1>
-    <button onclick="location.href='wonderla.html'">Wonderla</button>
-    <button onclick="loopMessage()">Loco Bear</button>
-    <button onclick="loopMessage()">GRS Fantasy Park</button>
-    <p id="loopText"></p>
-    <button id="loopButton" style="display:none;" onclick="location.href='without_night_stay.html'">Let me choose another option</button>
+
+    <div class="options">
+        <button onclick="selectOption('wonderla')">Wonderla</button>
+        <button onclick="selectOption('loco_bear')">Loco Bear</button>
+        <button onclick="selectOption('grs')">GRS Fantasy Park</button>
+    </div>
+
+    <div id="messageBox">
+        <p id="messageText"></p>
+        <button id="chooseAnother" onclick="goBack()">Let me choose another option</button>
+    </div>
 
     <script>
         let messages = [
-            "Wonderla has 80+ ride options",
-            "Wonderla is budget-friendly and more enjoyable",
-            "Wonderla has both water and dry games",
-            "I'll sponsor an ice cream for everyone",
-            "Chirag will sponsor a Yelneer for everyone",
-            "Please please please, Wonderla choose kardo, bhagwaan apka bhala karega"
+            "Wonderla has both dry and water games",
+            "Wonderla is nearby",
+            "Wonderla is under budget too",
+            "If you select Wonderla, Aftab will sponsor an ice-cream",
+            "If you select Wonderla, Chirag will sponsor a Yelneer",
+            "Please please select Wonderla 😭, bhagwaan apka aur apke bf ka bhala karega"
         ];
-        let count = 0;
+        let messageIndex = 0;
 
-        function loopMessage() {
-            if (count < messages.length) {
-                document.getElementById("loopText").innerText = messages[count];
-                document.getElementById("loopButton").style.display = "block";
-                count++;
+        function selectOption(option) {
+            if (option === 'wonderla') {
+                window.location.href = "wonderla.html"; 
+            } else {
+                document.getElementById("messageBox").style.display = "block";
+                document.getElementById("messageText").innerText = messages[messageIndex];
+                messageIndex = (messageIndex + 1) % messages.length; 
             }
         }
+
+        function goBack() {
+            document.getElementById("messageBox").style.display = "none";
+        }
     </script>
+
 </body>
 </html>

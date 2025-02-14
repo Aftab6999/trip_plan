@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Without Night Stay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>I'm really glad that a QT💅 like you has made it till here, please select your destination.</h1>
+    <button onclick="location.href='wonderla.html'">Wonderla</button>
+    <button onclick="loopMessage()">Loco Bear</button>
+    <button onclick="loopMessage()">GRS Fantasy Park</button>
+    <p id="loopText"></p>
+    <button id="loopButton" style="display:none;" onclick="location.href='without_night_stay.html'">Let me choose another option</button>
+
+    <script>
+        let messages = [
+            "Wonderla has 80+ ride options",
+            "Wonderla is budget-friendly and more enjoyable",
+            "Wonderla has both water and dry games",
+            "I'll sponsor an ice cream for everyone",
+            "Chirag will sponsor a Yelneer for everyone",
+            "Please please please, Wonderla choose kardo, bhagwaan apka bhala karega"
+        ];
+        let count = 0;
+
+        function loopMessage() {
+            if (count < messages.length) {
+                document.getElementById("loopText").innerText = messages[count];
+                document.getElementById("loopButton").style.display = "block";
+                count++;
+            }
+        }
+    </script>
+</body>
+</html>

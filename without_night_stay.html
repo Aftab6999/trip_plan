@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Trip</title>
+    <script>
+        let counter = 0;
+        function chooseOption(place) {
+            if (place === "Wonderla") {
+                alert("You are a beautiful girl, I'm not flirting but you actually are cute tho!");
+                // Log selection to a backend if required
+            } else {
+                let messages = [
+                    "Wonderla has 80+ ride options!",
+                    "Wonderla is budget friendly and more enjoyable!",
+                    "Wonderla has both water and dry games!",
+                    "I'll sponsor an ice cream for everyone!",
+                    "Chirag will sponsor a Yalnir for everyone!",
+                    "Please please please, Wonderla choose kardo, bhagwaan apka bhala karega!"
+                ];
+                alert(messages[Math.min(counter, messages.length - 1)]);
+                counter++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Pick Your Destination</h1>
+    <button onclick="chooseOption('Wonderla')">Wonderla</button>
+    <button onclick="chooseOption('Loco Bear')">Loco Bear</button>
+    <button onclick="chooseOption('GRS Fantasy Park or Fun World')">GRS Fantasy Park or Fun World</button>
+</body>
+</html>

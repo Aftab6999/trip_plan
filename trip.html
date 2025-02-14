@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Trip</title>
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(120deg, #89f7fe, #66a6ff);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+        }
+
+        button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-1 { background: #ff4757; color: white; }
+        .btn-2 { background: #1e90ff; color: white; }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Choose Your Trip Type</h1>
+    <button class="btn-1" onclick="window.location.href='night_stay.html'">With Night Stay</button>
+    <button class="btn-2" onclick="window.location.href='without_night_stay.html'">Without Night Stay</button>
+
+</body>
+</html>
